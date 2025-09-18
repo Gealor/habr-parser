@@ -15,7 +15,7 @@ async def get_url_html(url: str, aiohttp_session: aiohttp.ClientSession) -> str:
         headers={"User-Agent": str(UserAgent.chrome)},
     ) as response:
         response.raise_for_status()
-        html = await response.text()
+        html = await response.text() # text() для получения кода html страницы сайта
     return html
 
 
