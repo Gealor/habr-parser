@@ -25,7 +25,7 @@ def get_soup(html_text: str) -> BeautifulSoup:
 def get_all_datas_for_article(article_soup: BeautifulSoup):
     head = article_soup.find("a", class_="tm-title__link")
     return {
-        "title": head.find("span").text,
+        "title": head.find("span").text, # получаем текст по тегу span
         "url": head.get("href"),
         "count_views": article_soup.find("span", class_="tm-icon-counter__value").get("title"),
         "rating": article_soup.find(
